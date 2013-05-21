@@ -10,7 +10,7 @@
 @implementation RLPTest
 
 -(void)targetMethod {
-	NSLog(@"%s", __PRETTY_FUNCTION__);
+    NSLog(@"%s", __PRETTY_FUNCTION__);
 }
 
 @end
@@ -19,18 +19,18 @@ SPEC_BEGIN(RecursiveLockingProxySpec)
 
 describe(@"RecursiveLockingProxy", ^{
 	
-	__block RecursiveLockingProxy *sut;
-	__block RLPTest *testObject;
+    __block RecursiveLockingProxy *sut;
+    __block RLPTest *testObject;
 	
-	beforeEach(^{
+    beforeEach(^{
 	
-		testObject = [RLPTest new];
+        testObject = [RLPTest new];
 		
-		sut = [[RecursiveLockingProxy alloc] initWithTarget:testObject];
+        sut = [[RecursiveLockingProxy alloc] initWithTarget:testObject];
 		
-	});
+    });
 	
-	it(@"should exist", ^{
+    it(@"should exist", ^{
 		
         [sut shouldNotBeNil];
         
@@ -38,7 +38,7 @@ describe(@"RecursiveLockingProxy", ^{
 	
 	it(@"should invoke method on target object", ^{
 		
-		[[testObject should] receive:@selector(targetMethod)];
+        [[testObject should] receive:@selector(targetMethod)];
 		
         [(id)sut targetMethod];
         
@@ -46,8 +46,8 @@ describe(@"RecursiveLockingProxy", ^{
 	
 	xit(@"should call lock and unlock around method call", ^{
 	
-		// Cannot currently be tested due to Kiwi stub additions missing from NSProxy
-		[[sut should] receive:@selector(lock)];
+        // Cannot currently be tested due to Kiwi stub additions missing from NSProxy
+        [[sut should] receive:@selector(lock)];
 		
         [(id)sut targetMethod];
         
