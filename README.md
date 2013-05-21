@@ -1,7 +1,7 @@
 Composition
 ===========
 
-This is an experiment in using [Composition](http://en.wikipedia.org/wiki/Object_composition) rather than [Inheritance](http://en.wikipedia.org/wiki/Inheritance_(computer_science)) to construct a unit.
+This is an experiment in using [Composition][] rather than [Inheritance][] to construct a unit.
 
 The units to be created are [one-dimensional arrays](http://en.wikipedia.org/wiki/Array_data_structure) in both [immutable](http://en.wikipedia.org/wiki/Immutable) and mutable forms.
 
@@ -49,3 +49,9 @@ It composes the complete implementation from ArrayImpl, the LoggingProxy which w
 
 It adopts the IArray protocol to expose the immutable array methods.
 
+
+
+
+
+[composition]: http://en.wikipedia.org/wiki/Object_composition
+[inheritance]: http://en.wikipedia.org/wiki/Inheritance_(computer_science)
