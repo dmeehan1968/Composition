@@ -33,10 +33,11 @@ describe(@"Array", ^{
 	
 	context(@"with non-empty array", ^{
 		
-		__block NSArray *testArray = @[ @"One", @"Two", @"Three" ];
+		__block NSArray *testArray;
 		
 		beforeEach(^{
 			
+            testArray = @[ @"One", @"Two", @"Three" ];
 			sut = [[Array alloc] initWithArray: testArray];
 			
 		});
@@ -61,6 +62,39 @@ describe(@"Array", ^{
 
 	});
 	
+    context(@"with mutable array", ^{
+        
+        __block NSMutableArray *testArray;
+        
+        beforeEach(^{
+            
+            testArray = [@[ @"One" ] mutableCopy];
+            
+            sut = [[Array alloc] initWithArray:testArray];
+            
+        });
+        
+        it(@"mutating by adding to the passed array should not affect the created array", ^{
+            
+            [testArray addObject:@"Two"];
+            
+            [[sut should] haveCountOf:1];
+            
+        });
+        
+        
+        it(@"mutating by removing from the passed array should not affect the created array", ^{
+            
+            [testArray removeAllObjects];
+            
+            [[sut should] haveCountOf:1];
+            
+        });
+        
+        
+    });
+    
+
 
 
 	

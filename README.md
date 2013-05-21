@@ -39,6 +39,10 @@ Captures all messages directed to its target object and logs them to the Xcode c
 
 Wraps all messages directed to its target with lock/unlock messages to a [NSRecursiveLock][] object to ensure thread safety.  An example of the proxy pattern.
 
+### DistributionProxy
+
+Accepts multiple target objects, and forwards messages to the first one that responds to the given selector.
+
 ### Array
 
 A standalone implementation of an immutable array. It implements its abilities through composition rather than inheritance and is itself a proxy.  Each proxy is constructed in a heirarchy, using [Chain of Responsibility][chain] to dispatch forward message invocations to the appropriate implementation.
@@ -49,7 +53,11 @@ It composes the complete implementation from ArrayImpl, the LoggingProxy which w
 
 It adopts the IArray protocol to expose the immutable array methods.
 
+### MutableArray
 
+A standalone implementation of an mutable array.  Combines ArrayImpl and MutableArrayImpl, sharing storage between them, and adds in logging and locking proxies.
+
+Uses Distribution Proxy to forward messages to the appropriate implementation object.
 
 
 

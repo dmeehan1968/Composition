@@ -28,6 +28,11 @@
 		A3670983174BB6A1003703C1 /* RecursiveLockingProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = A3670981174BB6A1003703C1 /* RecursiveLockingProxy.m */; };
 		A3670985174BBA8C003703C1 /* RecursiveLockingProxySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A3670984174BBA8C003703C1 /* RecursiveLockingProxySpec.m */; };
 		A3670987174BBDE5003703C1 /* LoggingProxySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A3670986174BBDE5003703C1 /* LoggingProxySpec.m */; };
+		A367098A174BF4F6003703C1 /* MutableArraySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A3670989174BF4F6003703C1 /* MutableArraySpec.m */; };
+		A367098D174BF505003703C1 /* MutableArray.h in Headers */ = {isa = PBXBuildFile; fileRef = A367098B174BF504003703C1 /* MutableArray.h */; };
+		A367098E174BF505003703C1 /* MutableArray.m in Sources */ = {isa = PBXBuildFile; fileRef = A367098C174BF504003703C1 /* MutableArray.m */; };
+		A3670991174BF808003703C1 /* DistributionProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = A367098F174BF807003703C1 /* DistributionProxy.h */; };
+		A3670992174BF808003703C1 /* DistributionProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = A3670990174BF807003703C1 /* DistributionProxy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +75,11 @@
 		A3670984174BBA8C003703C1 /* RecursiveLockingProxySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecursiveLockingProxySpec.m; sourceTree = "<group>"; };
 		A3670986174BBDE5003703C1 /* LoggingProxySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoggingProxySpec.m; sourceTree = "<group>"; };
 		A3670988174BEA13003703C1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		A3670989174BF4F6003703C1 /* MutableArraySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MutableArraySpec.m; sourceTree = "<group>"; };
+		A367098B174BF504003703C1 /* MutableArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MutableArray.h; sourceTree = "<group>"; };
+		A367098C174BF504003703C1 /* MutableArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MutableArray.m; sourceTree = "<group>"; };
+		A367098F174BF807003703C1 /* DistributionProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistributionProxy.h; sourceTree = "<group>"; };
+		A3670990174BF807003703C1 /* DistributionProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistributionProxy.m; sourceTree = "<group>"; };
 		CB2AE1EA261344DE9A1E78DE /* libPods-CompositionTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CompositionTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E73B6A9B9C10462DB3439231 /* Pods-CompositionTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CompositionTests.xcconfig"; path = "Pods/Pods-CompositionTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -163,6 +173,7 @@
 				A3670971174B8C36003703C1 /* ArrayImplSpec.m */,
 				A3670974174B93F6003703C1 /* MutableArrayImplSpec.m */,
 				A3670976174BA535003703C1 /* ArraySpec.m */,
+				A3670989174BF4F6003703C1 /* MutableArraySpec.m */,
 				A3670984174BBA8C003703C1 /* RecursiveLockingProxySpec.m */,
 				A3670986174BBDE5003703C1 /* LoggingProxySpec.m */,
 				A3670955174B88DF003703C1 /* Supporting Files */,
@@ -192,6 +203,10 @@
 				A367097D174BB4D2003703C1 /* LoggingProxy.m */,
 				A3670980174BB6A1003703C1 /* RecursiveLockingProxy.h */,
 				A3670981174BB6A1003703C1 /* RecursiveLockingProxy.m */,
+				A367098B174BF504003703C1 /* MutableArray.h */,
+				A367098C174BF504003703C1 /* MutableArray.m */,
+				A367098F174BF807003703C1 /* DistributionProxy.h */,
+				A3670990174BF807003703C1 /* DistributionProxy.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -218,6 +233,8 @@
 				A367097A174BA59D003703C1 /* Array.h in Headers */,
 				A367097E174BB4D2003703C1 /* LoggingProxy.h in Headers */,
 				A3670982174BB6A1003703C1 /* RecursiveLockingProxy.h in Headers */,
+				A367098D174BF505003703C1 /* MutableArray.h in Headers */,
+				A3670991174BF808003703C1 /* DistributionProxy.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +371,8 @@
 				A367097B174BA59D003703C1 /* Array.m in Sources */,
 				A367097F174BB4D2003703C1 /* LoggingProxy.m in Sources */,
 				A3670983174BB6A1003703C1 /* RecursiveLockingProxy.m in Sources */,
+				A367098E174BF505003703C1 /* MutableArray.m in Sources */,
+				A3670992174BF808003703C1 /* DistributionProxy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +385,7 @@
 				A3670977174BA535003703C1 /* ArraySpec.m in Sources */,
 				A3670985174BBA8C003703C1 /* RecursiveLockingProxySpec.m in Sources */,
 				A3670987174BBDE5003703C1 /* LoggingProxySpec.m in Sources */,
+				A367098A174BF4F6003703C1 /* MutableArraySpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
