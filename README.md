@@ -3,7 +3,7 @@ Composition
 
 This is an experiment in using Composition rather than Inheritance to construct a unit.
 
-The units to be created as an array collection in both immutable and mutable forms.
+The units to be created are an array collection in both immutable and mutable forms.
 
 It is constructed from the following components.
 
@@ -25,11 +25,11 @@ Defines an interface to allow array implementation to access common storage.
 
 ### ArrayImpl
 
-An implementation of the immutable array methods.  This is not a standalone class, as storage for the array is provided by a delegate (the composing class).  This is an example of the Adapter pattern, converting Array class methods to NSArray.
+An implementation of the immutable array methods.  This is not a standalone class, as storage for the array is provided by a delegate (the composing class).  This is an example of the Adapter pattern, converting immutable Array interface to NSArray.
 
 ### MutableArrayImpl
 
-An implementation of the mutable array methods.  As for ArrayImpl, this is standalone class.  It is also an example of the Adapter pattern.
+An implementation of the mutable array methods.  As for ArrayImpl, this is not a standalone class.  It is also an example of the Adapter pattern.
 
 ### LoggingProxy
 
@@ -41,7 +41,7 @@ Wraps all messages directed to its target with lock/unlock messages to a NSRecur
 
 ### Array
 
-A standalone implementation of an immutable array.  
+A standalone implementation of an immutable array. It implements its abilities through composition rather than inheritance.
 
 It acts as delegate to the ArrayImpl in order to provide storage to the implementation.
 
