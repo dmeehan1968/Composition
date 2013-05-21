@@ -1,13 +1,13 @@
 Composition
 ===========
 
-This is an experiment in using Composition rather than Inheritance to construct a unit.
+This is an experiment in using [Composition](http://en.wikipedia.org/wiki/Object_composition) rather than [Inheritance](http://en.wikipedia.org/wiki/Inheritance_(computer_science)) to construct a unit.
 
-The units to be created are an array collection in both immutable and mutable forms.
+The units to be created are [one-dimensional arrays](http://en.wikipedia.org/wiki/Array_data_structure) in both [immutable](http://en.wikipedia.org/wiki/Immutable) and mutable forms.
 
 It is constructed from the following components.
 
-## Protocols (Interfaces)
+## Protocols ([Interfaces](http://en.wikipedia.org/wiki/Interface_(object-oriented_programming)))
 
 ### IArray
 
@@ -29,11 +29,11 @@ An implementation of the immutable array methods.  This is not a standalone clas
 
 ### MutableArrayImpl
 
-An implementation of the mutable array methods.  As for ArrayImpl, this is not a standalone class.  It is also an example of the Adapter pattern.
+An implementation of the mutable array methods.  As for ArrayImpl, this is not a standalone class.  It is also an example of the [Adapter pattern](http://en.wikipedia.org/wiki/Adapter_pattern).
 
 ### LoggingProxy
 
-Captures all messages directed to its target object and logs them to the Xcode console.  An example of the Proxy pattern.
+Captures all messages directed to its target object and logs them to the Xcode console.  An example of the [Proxy pattern](http://en.wikipedia.org/wiki/Proxy_pattern).
 
 ### RecursiveLockingProxy
 
@@ -41,9 +41,9 @@ Wraps all messages directed to its target with lock/unlock messages to a NSRecur
 
 ### Array
 
-A standalone implementation of an immutable array. It implements its abilities through composition rather than inheritance.
+A standalone implementation of an immutable array. It implements its abilities through composition rather than inheritance and is itself a proxy.  Each proxy is constructed in a heirarchy, using [Chain of Responsibility](http://en.wikipedia.org/wiki/Chain-of-responsibility_pattern) to dispatch forward message invocations to the appropriate implementation.
 
-It acts as delegate to the ArrayImpl in order to provide storage to the implementation.
+It acts as [delegate](http://en.wikipedia.org/wiki/Delegation_(programming)) to the ArrayImpl in order to provide storage to the implementation.
 
 It composes the complete implementation from ArrayImpl, the LoggingProxy which will write to the Xcode log whenever methods are called, and RecursiveLockingProxy, which makes each method thread safe.  
 
