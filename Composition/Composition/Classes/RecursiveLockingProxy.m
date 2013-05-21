@@ -30,8 +30,6 @@
 
 -(void)forwardInvocation:(NSInvocation *)invocation {
 	
-	NSLog(@"inv:%@", NSStringFromSelector([invocation selector]));
-	
 	[self lock];
 		
 	[invocation setTarget: self.target];
