@@ -26,6 +26,8 @@
 		A367097F174BB4D2003703C1 /* LoggingProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = A367097D174BB4D2003703C1 /* LoggingProxy.m */; };
 		A3670982174BB6A1003703C1 /* RecursiveLockingProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = A3670980174BB6A1003703C1 /* RecursiveLockingProxy.h */; };
 		A3670983174BB6A1003703C1 /* RecursiveLockingProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = A3670981174BB6A1003703C1 /* RecursiveLockingProxy.m */; };
+		A3670985174BBA8C003703C1 /* RecursiveLockingProxySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A3670984174BBA8C003703C1 /* RecursiveLockingProxySpec.m */; };
+		A3670987174BBDE5003703C1 /* LoggingProxySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A3670986174BBDE5003703C1 /* LoggingProxySpec.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		A367097D174BB4D2003703C1 /* LoggingProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoggingProxy.m; sourceTree = "<group>"; };
 		A3670980174BB6A1003703C1 /* RecursiveLockingProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecursiveLockingProxy.h; sourceTree = "<group>"; };
 		A3670981174BB6A1003703C1 /* RecursiveLockingProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecursiveLockingProxy.m; sourceTree = "<group>"; };
+		A3670984174BBA8C003703C1 /* RecursiveLockingProxySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecursiveLockingProxySpec.m; sourceTree = "<group>"; };
+		A3670986174BBDE5003703C1 /* LoggingProxySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoggingProxySpec.m; sourceTree = "<group>"; };
 		CB2AE1EA261344DE9A1E78DE /* libPods-CompositionTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CompositionTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E73B6A9B9C10462DB3439231 /* Pods-CompositionTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CompositionTests.xcconfig"; path = "Pods/Pods-CompositionTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -156,8 +160,10 @@
 			children = (
 				A3670971174B8C36003703C1 /* ArrayImplSpec.m */,
 				A3670974174B93F6003703C1 /* MutableArrayImplSpec.m */,
-				A3670955174B88DF003703C1 /* Supporting Files */,
 				A3670976174BA535003703C1 /* ArraySpec.m */,
+				A3670984174BBA8C003703C1 /* RecursiveLockingProxySpec.m */,
+				A3670986174BBDE5003703C1 /* LoggingProxySpec.m */,
+				A3670955174B88DF003703C1 /* Supporting Files */,
 			);
 			path = CompositionTests;
 			sourceTree = "<group>";
@@ -356,6 +362,8 @@
 				A3670972174B8C36003703C1 /* ArrayImplSpec.m in Sources */,
 				A3670975174B93F6003703C1 /* MutableArrayImplSpec.m in Sources */,
 				A3670977174BA535003703C1 /* ArraySpec.m in Sources */,
+				A3670985174BBA8C003703C1 /* RecursiveLockingProxySpec.m in Sources */,
+				A3670987174BBDE5003703C1 /* LoggingProxySpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

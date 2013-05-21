@@ -11,7 +11,7 @@
 @interface RecursiveLockingProxy ()
 
 @property (strong) id target;
-@property (strong) NSRecursiveLock *recursivelock;
+@property (strong) NSRecursiveLock *recursiveLock;
 
 @end
 
@@ -22,7 +22,7 @@
 	if (self) {
 
 		_target = target;
-		_recursivelock = [[NSRecursiveLock alloc] init];
+		_recursiveLock = [[NSRecursiveLock alloc] init];
 		
 	}
 	return self;
@@ -30,8 +30,10 @@
 
 -(void)forwardInvocation:(NSInvocation *)invocation {
 	
-	[self lock];
+	NSLog(@"inv:%@", NSStringFromSelector([invocation selector]));
 	
+	[self lock];
+		
 	[invocation setTarget: self.target];
 	[invocation invoke];
 	
@@ -40,17 +42,17 @@
 }
 
 -(NSMethodSignature *)methodSignatureForSelector:(SEL)sel {
-	
+
 	return [self.target methodSignatureForSelector:sel];
-	
+
 }
 
 -(void)lock {
-	[self.recursivelock lock];
+	[self.recursiveLock lock];
 }
 
 -(void)unlock {
-	[self.recursivelock unlock];
+	[self.recursiveLock unlock];
 }
 
 @end
