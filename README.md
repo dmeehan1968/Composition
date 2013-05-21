@@ -1,5 +1,5 @@
-Composition
-===========
+Composition Experiments
+========================
 
 This is an experiment in using [Composition][] rather than [Inheritance][] to construct a unit.
 
