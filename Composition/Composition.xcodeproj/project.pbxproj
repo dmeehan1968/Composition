@@ -13,6 +13,12 @@
 		A3670950174B88DF003703C1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A367093C174B88DF003703C1 /* Cocoa.framework */; };
 		A3670953174B88DF003703C1 /* Composition.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A3670939174B88DF003703C1 /* Composition.dylib */; };
 		A3670959174B88DF003703C1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A3670957174B88DF003703C1 /* InfoPlist.strings */; };
+		A367096B174B8B3B003703C1 /* ArrayImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = A3670969174B8B3B003703C1 /* ArrayImpl.h */; };
+		A367096C174B8B3B003703C1 /* ArrayImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = A367096A174B8B3B003703C1 /* ArrayImpl.m */; };
+		A367096F174B8B6E003703C1 /* MutableArrayImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = A367096D174B8B6E003703C1 /* MutableArrayImpl.h */; };
+		A3670970174B8B6E003703C1 /* MutableArrayImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = A367096E174B8B6E003703C1 /* MutableArrayImpl.m */; };
+		A3670972174B8C36003703C1 /* ArrayImplSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A3670971174B8C36003703C1 /* ArrayImplSpec.m */; };
+		A3670975174B93F6003703C1 /* MutableArrayImplSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A3670974174B93F6003703C1 /* MutableArrayImplSpec.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +42,15 @@
 		A367094E174B88DF003703C1 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		A3670956174B88DF003703C1 /* CompositionTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CompositionTests-Info.plist"; sourceTree = "<group>"; };
 		A3670958174B88DF003703C1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A3670967174B8AAF003703C1 /* IArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IArray.h; sourceTree = "<group>"; };
+		A3670968174B8ABC003703C1 /* IMutableArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IMutableArray.h; sourceTree = "<group>"; };
+		A3670969174B8B3B003703C1 /* ArrayImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrayImpl.h; sourceTree = "<group>"; };
+		A367096A174B8B3B003703C1 /* ArrayImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrayImpl.m; sourceTree = "<group>"; };
+		A367096D174B8B6E003703C1 /* MutableArrayImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MutableArrayImpl.h; sourceTree = "<group>"; };
+		A367096E174B8B6E003703C1 /* MutableArrayImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MutableArrayImpl.m; sourceTree = "<group>"; };
+		A3670971174B8C36003703C1 /* ArrayImplSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrayImplSpec.m; sourceTree = "<group>"; };
+		A3670973174B9071003703C1 /* IArrayDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IArrayDelegate.h; sourceTree = "<group>"; };
+		A3670974174B93F6003703C1 /* MutableArrayImplSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MutableArrayImplSpec.m; sourceTree = "<group>"; };
 		CB2AE1EA261344DE9A1E78DE /* libPods-CompositionTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CompositionTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E73B6A9B9C10462DB3439231 /* Pods-CompositionTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CompositionTests.xcconfig"; path = "Pods/Pods-CompositionTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -107,6 +122,8 @@
 		A3670942174B88DF003703C1 /* Composition */ = {
 			isa = PBXGroup;
 			children = (
+				A3670966174B8A93003703C1 /* Protocols */,
+				A3670965174B8A25003703C1 /* Classes */,
 				A3670943174B88DF003703C1 /* Supporting Files */,
 			);
 			path = Composition;
@@ -123,6 +140,8 @@
 		A3670954174B88DF003703C1 /* CompositionTests */ = {
 			isa = PBXGroup;
 			children = (
+				A3670971174B8C36003703C1 /* ArrayImplSpec.m */,
+				A3670974174B93F6003703C1 /* MutableArrayImplSpec.m */,
 				A3670955174B88DF003703C1 /* Supporting Files */,
 			);
 			path = CompositionTests;
@@ -137,6 +156,27 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		A3670965174B8A25003703C1 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A3670969174B8B3B003703C1 /* ArrayImpl.h */,
+				A367096A174B8B3B003703C1 /* ArrayImpl.m */,
+				A367096D174B8B6E003703C1 /* MutableArrayImpl.h */,
+				A367096E174B8B6E003703C1 /* MutableArrayImpl.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		A3670966174B8A93003703C1 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A3670967174B8AAF003703C1 /* IArray.h */,
+				A3670968174B8ABC003703C1 /* IMutableArray.h */,
+				A3670973174B9071003703C1 /* IArrayDelegate.h */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -144,6 +184,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A367096B174B8B3B003703C1 /* ArrayImpl.h in Headers */,
+				A367096F174B8B6E003703C1 /* MutableArrayImpl.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +317,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A367096C174B8B3B003703C1 /* ArrayImpl.m in Sources */,
+				A3670970174B8B6E003703C1 /* MutableArrayImpl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +326,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3670972174B8C36003703C1 /* ArrayImplSpec.m in Sources */,
+				A3670975174B93F6003703C1 /* MutableArrayImplSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
