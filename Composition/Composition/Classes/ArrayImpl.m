@@ -8,6 +8,12 @@
 
 #import "ArrayImpl.h"
 
+@interface ArrayImpl ()
+
+@property (weak) id<IArrayDelegate> delegate;
+
+@end
+
 @implementation ArrayImpl
 
 @synthesize delegate = _delegate;

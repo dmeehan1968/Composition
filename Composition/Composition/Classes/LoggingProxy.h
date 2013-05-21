@@ -1,5 +1,5 @@
 //
-//  IArray.h
+//  LoggingProxy.h
 //  Composition
 //
 //  Created by Dave Meehan on 21/05/2013.
@@ -7,12 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "IArrayDelegate.h"
 
-@protocol IArray <NSObject>
+@interface LoggingProxy : NSProxy
 
-
--(id)objectAtIndex: (NSInteger) index;
--(NSInteger) count;
+-(id)initWithTarget: (id) target;
 
 @end

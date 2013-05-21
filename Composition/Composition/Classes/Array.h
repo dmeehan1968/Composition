@@ -1,5 +1,5 @@
 //
-//  IArray.h
+//  Array.h
 //  Composition
 //
 //  Created by Dave Meehan on 21/05/2013.
@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+
 #import "IArrayDelegate.h"
+#import "IArray.h"
 
-@protocol IArray <NSObject>
+@interface Array : NSProxy <IArray>
 
-
--(id)objectAtIndex: (NSInteger) index;
--(NSInteger) count;
+-(id)init;
+-(id)initWithArray: (NSArray *)array;
 
 @end

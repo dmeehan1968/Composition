@@ -1,5 +1,5 @@
 //
-//  IArray.h
+//  RecursiveLockingProxy.h
 //  Composition
 //
 //  Created by Dave Meehan on 21/05/2013.
@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "IArrayDelegate.h"
 
-@protocol IArray <NSObject>
+@interface RecursiveLockingProxy : NSProxy
 
+-(id)initWithTarget: (id) target;
 
--(id)objectAtIndex: (NSInteger) index;
--(NSInteger) count;
+-(void)lock;
+-(void)unlock;
 
 @end

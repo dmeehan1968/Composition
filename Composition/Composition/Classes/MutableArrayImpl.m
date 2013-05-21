@@ -8,6 +8,12 @@
 
 #import "MutableArrayImpl.h"
 
+@interface MutableArrayImpl ()
+
+@property (weak) id<IArrayDelegate> delegate;
+
+@end
+
 @implementation MutableArrayImpl
 
 @synthesize delegate = _delegate;

@@ -11,8 +11,6 @@
 
 @protocol IMutableArray <NSObject>
 
-@property (weak) id<IArrayDelegate> delegate;
-
 -(void)addObject: (id) object;
 -(void)removeObject: (id) object;
 
