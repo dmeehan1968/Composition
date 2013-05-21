@@ -5,6 +5,20 @@ This is an experiment in using [Composition][] rather than [Inheritance][] to co
 
 The units to be created are [one-dimensional arrays][arrays] in both [immutable][] and mutable forms.
 
+The units constructed are not meant to be real world requirements - you'd hardly have a reason for making new array classes from existing array classes, but it shows for composition can give a more flexible solution than inheritance.
+
+Main benefits are:
+
+* Less coupling between mutable and immutable implementations
+* Single responsibility for each component
+* Greater reusability of components
+* Easier to refactor without affecting inherited interface chain
+
+Main drawbacks are:
+
+* Increased complexity of code in the short term.
+* Increased runtime overhead from additional message forwarding
+
 It is constructed from the following components.
 
 ## Protocols ([Interfaces])
