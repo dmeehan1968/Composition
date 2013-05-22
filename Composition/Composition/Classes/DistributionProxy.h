@@ -10,6 +10,6 @@
 
 @interface DistributionProxy : NSProxy
 
--(id)initWithArray: (NSArray *)array;
+-(id)initWithTargets: (NSArray *)array;
 
 @end

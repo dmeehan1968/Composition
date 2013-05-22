@@ -94,6 +94,33 @@ describe(@"Array", ^{
         
     });
     
+    context(@"locking across method calls", ^{
+        
+        beforeEach(^{
+            
+            sut = [[Array alloc] initWithArray:@[ @"One", @"Two", @"Three" ]];
+            
+        });
+        
+        it(@"should allow locking", ^{
+            
+            [sut lock];
+            
+            [[[sut objectAtIndex:0] should] equal:@"One"];
+            [[[sut objectAtIndex:1] should] equal:@"Two"];
+            [[[sut objectAtIndex:2] should] equal:@"Three"];
+            
+            [sut unlock];
+            
+        });
+
+        
+
+        
+    });
+    
+
+    
 
 
 

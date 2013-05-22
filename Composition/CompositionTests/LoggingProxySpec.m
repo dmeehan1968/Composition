@@ -25,7 +25,7 @@ describe(@"Logging Proxy", ^{
 	beforeEach(^{
 		testObject = [LPTestObject new];
 		
-		sut = [[LoggingProxy alloc] initWithTarget:testObject];
+		sut = [[LoggingProxy alloc] initWithProxiedObject:testObject];
 		
 	});
 	

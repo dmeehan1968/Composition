@@ -7,9 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "OCProxy.h"
 
-@interface LoggingProxy : NSProxy
-
--(id)initWithTarget: (id) target;
+@interface LoggingProxy : OCProxy
 
 @end

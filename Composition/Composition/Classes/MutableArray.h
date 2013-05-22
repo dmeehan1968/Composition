@@ -10,7 +10,7 @@
 #import "IArray.h"
 #import "IMutableArray.h"
 
-@interface MutableArray : NSProxy <IArray, IMutableArray, IArrayDelegate>
+@interface MutableArray : NSProxy <IArray, IMutableArray, IArrayDelegate, NSLocking>
 
 -(id)init;
 -(id)initWithArray: (NSArray *)array;

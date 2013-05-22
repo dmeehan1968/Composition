@@ -7,10 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "OCProxy.h"
 
-@interface RecursiveLockingProxy : NSProxy
-
--(id)initWithTarget: (id) target;
+@interface RecursiveLockingProxy : OCProxy
 
 -(void)lock;
 -(void)unlock;

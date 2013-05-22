@@ -10,8 +10,9 @@
 
 #import "IArrayDelegate.h"
 #import "IArray.h"
+#import "OCProxy.h"
 
-@interface Array : NSProxy <IArray>
+@interface Array : OCProxy <IArray, NSLocking>
 
 -(id)init;
 -(id)initWithArray: (NSArray *)array;

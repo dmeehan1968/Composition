@@ -8,34 +8,14 @@
 
 #import "LoggingProxy.h"
 
-@interface LoggingProxy ()
-
-@property (strong) id target;
-
-@end
-
 @implementation LoggingProxy
-
--(id)initWithTarget:(id)target {
-	
-	if (self) {
-		_target = target;
-	}
-	return self;
-}
 
 -(void)forwardInvocation:(NSInvocation *)invocation {
 
 	NSLog(@"%@", NSStringFromSelector([invocation selector]));
-	
-	[invocation setTarget: self.target];
-	[invocation invoke];
-	
-}
 
--(NSMethodSignature *)methodSignatureForSelector:(SEL)sel {
+	[super forwardInvocation:invocation];
 	
-	return [self.target methodSignatureForSelector:sel];
 }
 
 @end

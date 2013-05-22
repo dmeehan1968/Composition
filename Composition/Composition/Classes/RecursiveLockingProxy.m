@@ -7,42 +7,35 @@
 //
 
 #import "RecursiveLockingProxy.h"
+#import <objc/runtime.h>
 
 @interface RecursiveLockingProxy ()
 
-@property (strong) id target;
 @property (strong) NSRecursiveLock *recursiveLock;
 
 @end
 
 @implementation RecursiveLockingProxy
 
--(id)initWithTarget: (id) target {
+-(id)initWithProxiedObject:(id<NSObject>)proxiedObject {
 	
-	if (self) {
-
-		_target = target;
-		_recursiveLock = [[NSRecursiveLock alloc] init];
+	if (self = [super initWithProxiedObject:proxiedObject]) {
 		
+		_recursiveLock = [[NSRecursiveLock alloc] init];
+
 	}
+	
 	return self;
 }
 
 -(void)forwardInvocation:(NSInvocation *)invocation {
-	
+
 	[self lock];
-		
-	[invocation setTarget: self.target];
-	[invocation invoke];
+
+	[super forwardInvocation:invocation];
 	
 	[self unlock];
 	
-}
-
--(NSMethodSignature *)methodSignatureForSelector:(SEL)sel {
-
-	return [self.target methodSignatureForSelector:sel];
-
 }
 
 -(void)lock {

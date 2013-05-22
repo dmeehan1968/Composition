@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		7B651060D65E41299865D16B /* libPods-CompositionTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2AE1EA261344DE9A1E78DE /* libPods-CompositionTests.a */; };
+		A31C92AC174CC67D003CE9C7 /* OCProxySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A31C92AB174CC67D003CE9C7 /* OCProxySpec.m */; };
+		A31C92AF174CC68F003CE9C7 /* OCProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = A31C92AD174CC68F003CE9C7 /* OCProxy.h */; };
+		A31C92B0174CC68F003CE9C7 /* OCProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = A31C92AE174CC68F003CE9C7 /* OCProxy.m */; };
 		A367093D174B88DF003703C1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A367093C174B88DF003703C1 /* Cocoa.framework */; };
 		A367094F174B88DF003703C1 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A367094E174B88DF003703C1 /* SenTestingKit.framework */; };
 		A3670950174B88DF003703C1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A367093C174B88DF003703C1 /* Cocoa.framework */; };
@@ -46,6 +49,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A31C92AB174CC67D003CE9C7 /* OCProxySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCProxySpec.m; sourceTree = "<group>"; };
+		A31C92AD174CC68F003CE9C7 /* OCProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCProxy.h; sourceTree = "<group>"; };
+		A31C92AE174CC68F003CE9C7 /* OCProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCProxy.m; sourceTree = "<group>"; };
 		A3670939174B88DF003703C1 /* Composition.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = Composition.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		A367093C174B88DF003703C1 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		A367093F174B88DF003703C1 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -170,6 +176,7 @@
 		A3670954174B88DF003703C1 /* CompositionTests */ = {
 			isa = PBXGroup;
 			children = (
+				A31C92AB174CC67D003CE9C7 /* OCProxySpec.m */,
 				A3670971174B8C36003703C1 /* ArrayImplSpec.m */,
 				A3670974174B93F6003703C1 /* MutableArrayImplSpec.m */,
 				A3670976174BA535003703C1 /* ArraySpec.m */,
@@ -193,6 +200,8 @@
 		A3670965174B8A25003703C1 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A31C92AD174CC68F003CE9C7 /* OCProxy.h */,
+				A31C92AE174CC68F003CE9C7 /* OCProxy.m */,
 				A3670969174B8B3B003703C1 /* ArrayImpl.h */,
 				A367096A174B8B3B003703C1 /* ArrayImpl.m */,
 				A367096D174B8B6E003703C1 /* MutableArrayImpl.h */,
@@ -235,6 +244,7 @@
 				A3670982174BB6A1003703C1 /* RecursiveLockingProxy.h in Headers */,
 				A367098D174BF505003703C1 /* MutableArray.h in Headers */,
 				A3670991174BF808003703C1 /* DistributionProxy.h in Headers */,
+				A31C92AF174CC68F003CE9C7 /* OCProxy.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,6 +383,7 @@
 				A3670983174BB6A1003703C1 /* RecursiveLockingProxy.m in Sources */,
 				A367098E174BF505003703C1 /* MutableArray.m in Sources */,
 				A3670992174BF808003703C1 /* DistributionProxy.m in Sources */,
+				A31C92B0174CC68F003CE9C7 /* OCProxy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +397,7 @@
 				A3670985174BBA8C003703C1 /* RecursiveLockingProxySpec.m in Sources */,
 				A3670987174BBDE5003703C1 /* LoggingProxySpec.m in Sources */,
 				A367098A174BF4F6003703C1 /* MutableArraySpec.m in Sources */,
+				A31C92AC174CC67D003CE9C7 /* OCProxySpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

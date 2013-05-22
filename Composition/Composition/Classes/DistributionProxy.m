@@ -16,7 +16,7 @@
 
 @implementation DistributionProxy
 
--(id)initWithArray:(NSArray *)array {
+-(id)initWithTargets:(NSArray *)array {
 
     if (self) {
         

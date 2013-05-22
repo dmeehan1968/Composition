@@ -26,7 +26,7 @@ describe(@"RecursiveLockingProxy", ^{
 	
         testObject = [RLPTest new];
 		
-        sut = [[RecursiveLockingProxy alloc] initWithTarget:testObject];
+        sut = [[RecursiveLockingProxy alloc] initWithProxiedObject:testObject];
 		
     });
 	
@@ -35,7 +35,7 @@ describe(@"RecursiveLockingProxy", ^{
         [sut shouldNotBeNil];
         
     });
-	
+    
 	it(@"should invoke method on target object", ^{
 		
         [[testObject should] receive:@selector(targetMethod)];

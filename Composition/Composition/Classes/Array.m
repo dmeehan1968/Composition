@@ -13,7 +13,6 @@
 
 @interface Array () <IArrayDelegate>
 
-@property (strong) id implementation;
 @property (strong) NSArray *storage;
 
 @end
@@ -33,14 +32,14 @@
 	NSParameterAssert(array);
 	NSParameterAssert([array isKindOfClass: [NSArray class]]);
 	
-	if (self) {
-		
-		id arrayImpl = [[ArrayImpl alloc] initWithDelegate: self];
-		id locker = [[RecursiveLockingProxy alloc] initWithTarget:arrayImpl];
-		
-		_implementation = [[LoggingProxy alloc] initWithTarget:locker];
+	id arrayImpl = [[ArrayImpl alloc] initWithDelegate: self];
+	id locker = [[RecursiveLockingProxy alloc] initWithProxiedObject:arrayImpl];
+	id logger = [[LoggingProxy alloc] initWithProxiedObject:locker];
+	
+	if (self = [super initWithProxiedObject:logger]) {
 		
 		_storage = [array copy];
+
 	}
 	
 	return self;
@@ -48,16 +47,8 @@
 }
 
 -(void)forwardInvocation: (NSInvocation *) anInvocation {
-	
-	[anInvocation setTarget: self.implementation];
-	[anInvocation invoke];
-	
+	[super forwardInvocation:anInvocation];
 }
 
--(NSMethodSignature *) methodSignatureForSelector: (SEL) aSelector {
-	
-	return [self.implementation methodSignatureForSelector: aSelector];
-
-}
 
 @end

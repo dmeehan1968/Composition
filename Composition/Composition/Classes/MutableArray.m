@@ -36,11 +36,11 @@
         id immutableArray = [[ArrayImpl alloc] initWithDelegate:self];
         id mutableArray = [[MutableArrayImpl alloc] initWithDelegate: self];
         
-        id forwarder = [[DistributionProxy alloc] initWithArray: @[ immutableArray, mutableArray ]];
+        id forwarder = [[DistributionProxy alloc] initWithTargets: @[ immutableArray, mutableArray ]];
         
-        id locker = [[RecursiveLockingProxy alloc] initWithTarget:forwarder];
+        id locker = [[RecursiveLockingProxy alloc] initWithProxiedObject:forwarder];
         
-        _implementation = [[LoggingProxy alloc] initWithTarget:locker];
+        _implementation = [[LoggingProxy alloc] initWithProxiedObject:locker];
         
         _storage = [array mutableCopy];
     }
