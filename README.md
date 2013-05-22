@@ -37,6 +37,10 @@ Defines an interface to allow array implementation to access common storage.
 
 ## Classes
 
+### OCProxy
+
+Subclasses NSProxy to provide stock implementations of common proxy handlers and provide debug logging on request.  Proxy classes can subclass from OCProxy to take care of some of the heavy lifting.
+
 ### ArrayImpl
 
 An implementation of the immutable array methods.  This is not a standalone class, as storage for the array is provided by a delegate (the composing class).  This is an example of the Adapter pattern, converting immutable Array interface to NSArray.
